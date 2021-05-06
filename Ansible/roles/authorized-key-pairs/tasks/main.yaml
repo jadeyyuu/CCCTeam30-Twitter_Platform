@@ -1,0 +1,21 @@
+---
+# Set authorized key taken from file
+- name: Set authorized key taken from file
+  authorized_key:
+    user: ubuntu
+    state: present
+    key: "{{ lookup('file', '/Users/jade/Documents/unimelb/sm1 2021/CCC COMP90024 Cluster and Cloud Computing /Group Project/cloud.key.pub') }}"
+
+
+
+#set multiple authorized keys
+- name: Set up multiple authorized keys
+  authorized_key:
+    user: ubuntu
+    state: present
+    key: '{{ item }}'
+  with_file:
+    - public_keys/Patrick
+    - public_keys/cloud
+
+  

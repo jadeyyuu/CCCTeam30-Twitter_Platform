@@ -1,0 +1,30 @@
+---
+# ********************* Common vars **************************************
+availability_zone: melbourne-qh2-uom
+instance_flavor: uom.mse.2c9g
+instance_network: qh2-uom-internal
+instance_image: 916cad7a-c545-48b2-b36c-d509ee63b3ce  #NeCTAR Ubuntu 18.04 LTS (Bionic) amd64 (with Docker)
+instance_key_name: app_key
+project_working_directory: /home/group30/CCC-COMP90024
+
+# ********************* Git ***********************************************
+repository_name: CCC-Group-Project
+git_repo: /home/ubuntu/CCC-Group-Project/git
+
+# ********************* Docker ********************************************
+
+
+# ********************* CouchDB *******************************************
+ouchdb_version: 3.0.0
+couchdb_config_path: /home/ubuntu/couchdb/etc
+couchdb_user: admin
+couchdb_pass: admin
+couchdb_share: 4
+couchdb_replica: 3
+# cluster_cookie: 'hello'
+couchdb_port: 5984
+
+# ********************* Tornado ********************************************
+
+
+
