@@ -1,18 +1,18 @@
 ---
 # ********************* Common vars **************************************
-availability_zone: melbourne-qh2-uom
-instance_flavor: uom.mse.2c9g
-instance_network: qh2-uom-internal
-instance_image: 916cad7a-c545-48b2-b36c-d509ee63b3ce  #NeCTAR Ubuntu 18.04 LTS (Bionic) amd64 (with Docker)
-instance_key_name: app_key
-project_working_directory: /home/group30/CCC-COMP90024
+project_working_directory: /home/ubuntu/COMP90024/project
+remote_working_directory: /home/ubuntu/COMP90024/remote
+proxy_address: http://wwwproxy.unimelb.edu.au:8000
+
+# ********************* Nginx ***********************************************
+
 
 # ********************* Git ***********************************************
 repository_name: CCC-Group-Project
 git_repo: /home/ubuntu/CCC-Group-Project/git
 
 # ********************* Docker ********************************************
-
+enable_docker_remote_control: true
 
 # ********************* CouchDB *******************************************
 ouchdb_version: 3.0.0
@@ -21,8 +21,12 @@ couchdb_user: admin
 couchdb_pass: admin
 couchdb_share: 4
 couchdb_replica: 3
-# cluster_cookie: 'hello'
+# couchdb_cookie: 'a192aeb9904e6590849337933b000c99' # to be check
+# couchdb_uuid: 'a192aeb9904e6590849337933b001159' # to be check
+cluster_name: '_cluster_setup'
+couchdb_container_name: 'couchdb_'
 couchdb_port: 5984
+couchdb_db_name: "live-tweets"
 
 # ********************* Tornado ********************************************
 
