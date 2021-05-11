@@ -1,0 +1,8 @@
+CouchDB
+Django
+djangorestframework
+django-filter
+influxdb
+markdown
+mpi4py
+urllib3
