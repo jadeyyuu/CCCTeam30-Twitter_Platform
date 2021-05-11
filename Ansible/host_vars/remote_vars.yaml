@@ -1,10 +1,14 @@
 ---
 # ********************* Common vars **************************************
-project_working_directory: /home/ubuntu/COMP90024/project
+project_working_directory: /Users/jade/Documents/unimelb/sm1 2021/CCC COMP90024 Cluster and Cloud Computing /Group Project/
 remote_working_directory: /home/ubuntu/COMP90024/remote
 proxy_address: http://wwwproxy.unimelb.edu.au:8000
 
-# ********************* Nginx ***********************************************
+# ********************* Ansible ***********************************************
+ansiple_python_interpreter: /usr/bin/python3
+ansible_user: ubuntu
+# ansible_ssh_private_key_file: ~/.ssh/app_key.pem
+# ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
 
 
 # ********************* Git ***********************************************
@@ -15,14 +19,15 @@ git_repo: /home/ubuntu/CCC-Group-Project/git
 enable_docker_remote_control: true
 
 # ********************* CouchDB *******************************************
-ouchdb_version: 3.0.0
+couchdb_version: 3.1.1
 couchdb_config_path: /home/ubuntu/couchdb/etc
 couchdb_user: admin
-couchdb_pass: admin
+couchdb_pass: password
 couchdb_share: 4
 couchdb_replica: 3
-# couchdb_cookie: 'a192aeb9904e6590849337933b000c99' # to be check
-# couchdb_uuid: 'a192aeb9904e6590849337933b001159' # to be check
+couchdb_image: ibmcom/couchdb3:latest
+couchdb_cookie: 'a192aeb9904e6590849337933b000c99' 
+couchdb_uuid: 'a192aeb9904e6590849337933b001159' # to be check
 cluster_name: '_cluster_setup'
 couchdb_container_name: 'couchdb_'
 couchdb_port: 5984

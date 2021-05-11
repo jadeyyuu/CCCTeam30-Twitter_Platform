@@ -9,5 +9,3 @@
     - role: create-volume
     - role: create-security-group
     - role: create-instance
-    # - role: create-volume-snapshot  # not necessary
-

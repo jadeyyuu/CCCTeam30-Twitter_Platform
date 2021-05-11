@@ -1,15 +1,6 @@
 ---
-- name: add app_key
+- name: add authorized_keys
   copy:
     src: "config/app_key.pem"
-    dest: ~/app_key
+    dest: ~/.ssh/app_key
     mode: 0600
-
-#set multiple authorized keys
-# - name: Set up multiple authorized keys
-#   authorized_key:
-#     user: ubuntu
-#     state: present
-#     key: '{{ item }}'
-#   with_file:
-#     - public_keys/Patrick
