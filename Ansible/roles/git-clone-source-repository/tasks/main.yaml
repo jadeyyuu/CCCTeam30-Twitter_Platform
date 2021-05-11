@@ -1,0 +1,23 @@
+---
+- name: add github ssh key
+  copy:
+    src: "{{project_working_directory}}/CCC-Group-Project/Ansible/config/git_key"
+    dest: /home/ubuntu/.ssh/GitHubKey
+    owner: ubuntu
+    group: ubuntu
+    mode: 0600
+# copy GitHub private key to server
+
+- name: configure ssh to use ansible key for github.com
+  template:
+    src: "{{project_working_directory}}/CCC-Group-Project/Ansible/config/ssh_config"
+    dest: /home/ubuntu/.ssh/config
+    owner: ubuntu
+    group: ubuntu
+    mode: 0644
+
+- name: clone the source from git
+  git:
+    repo: ssh://git@github.com:jadeyyuu/CCC-Group-Project.git
+    key_file: /home/ubuntu/.ssh/GitHubKey
+    dest: '{{ remote_working_directory }}'
