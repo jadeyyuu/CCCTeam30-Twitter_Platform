@@ -6,8 +6,8 @@
     image: "{{ couchdb_image }}"
     ports:
       - "{{couchdb_port}}:{{couchdb_port}}" # 80 due to change security_group later
-      - "9100:9100"
-      - "4369:4369"
+      - "5985:5985"
+      - "5986:5986"
     env:
       COUCHDB_PASSWORD: "{{ couchdb_pass }}"
       COUCHDB_USER: "{{ couchdb_user }}"

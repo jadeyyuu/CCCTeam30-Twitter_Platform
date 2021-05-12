@@ -33,7 +33,7 @@ couchdb_container_name: 'couchdb_'
 couchdb_port: 5984
 couchdb_db_name: "live-tweets"
 
-# ********************* Tornado ********************************************
+# ********************* Django ********************************************
 
 
 
