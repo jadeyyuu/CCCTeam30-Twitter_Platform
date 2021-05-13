@@ -1,20 +1,20 @@
 # -*- coding: utf-8 -*-
 
 DOCKER_DOMAIN = {
-    'instance_1_frontend': dict(
-        domain='172.26.130.108',
+    'instance_1': dict(
+        domain='172.26.130.42',
         port=8866
     ),
-    'instance_2_tornado': dict(
-        domain='172.26.132.81',
+    'instance_2': dict(
+        domain='172.26.131.236',
         port=8866
     ),
-    'instance_3_tornado': dict(
-        domain='172.26.128.99',
+    'instance_3': dict(
+        domain='172.26.134.19',
         port=8866
     ),
-    'instance_4_monitor': dict(
-        domain='172.26.128.125',
+    'instance_4': dict(
+        domain='172.26.129.75',
         port=8866,
     ),
 }
@@ -37,11 +37,11 @@ COUCH_DB_USER = 'admin'
 COUCH_DB_PASSWORD = '123456'
 COUCH_DB_ENV = ['COUCHDB_USER={}'.format(COUCH_DB_USER), 'COUCHDB_PASSWORD={}'.format(COUCH_DB_PASSWORD)]
 
-TORNADO_PORTS = {
+DJANGO_PORTS = {
     '8080/tcp': 8080
 }
 
-TORNADO_VOLUMES = {
+DJANGO_VOLUMES = {
     '/home/ubuntu/backend/': {'bind': ''}
 }
 
@@ -50,7 +50,7 @@ NGINX_PORTS = {
 }
 
 INFLUXDB_PORTS = {
-    '8085/tcp': 8085,
+    '8083/tcp': 8083,
     '8086/tcp': 8086
 }
 
@@ -60,7 +60,7 @@ INFLUXDB_VOLUMES = {
 
 INFLUXDB_ENV = {
     'ADMIN_USER': 'admin',
-    'INFLUXDB_INIT_PWD': '123456'
+    'INFLUXDB_INIT_PWD': 'password'
 }
 
 GRAFANA_PORTS = {
@@ -84,7 +84,7 @@ GRAFANA_ENV = {
     'GF_SMTP_FROM_NAME': 'Grafana',
     'GF_SECURITY_ADMIN_USER': 'ccc30',
     'GF_SECURITY_ADMIN_PASSWORD': 'ccc30',
-    'GF_SERVER_DOMAIN': '172.26.130.108',
+    'GF_SERVER_DOMAIN': '172.26.129.75',
 }
 
 RESTART = {"Name": "always"}
@@ -104,13 +104,13 @@ CADVISOR_PORTS = {
 CADVISOR_ENV = {
     'storage_driver': 'influxdb',
     'storage_driver_db': 'cAdvisor',
-    'storage_driver_host': '172.26.128.125:8086'
+    'storage_driver_host': '172.26.129.75:8086'
 }
 
 CADVISOR_COMMAND = [
     '-storage_driver', 'influxdb',
     '-storage_driver_db', '',
-    '-storage_driver_host', '172.26.128.125:8086'
+    '-storage_driver_host', '172.26.129.75:8086'
 ]
 
 CADVISOR_VOLUMES = {
