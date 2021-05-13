@@ -38,9 +38,14 @@
   loop: '{{ os_instance.results }}'
   when: item.openstack is defined
 
-- name: create file
-  become: yes
-  template:
-    src: ansible-hosts.j2
-    dest: "{{ inventory_file }}"
+- name: Create inventory file
+  ini_file:
+    path: "{{ playbook_dir }}/hosts.ini"
+    section: "{{ item.item.host_group }}"
+    option: "{{ item.item.name }} ansible_host"
+    value: "{{ item.openstack.public_v4 }}"
+    backup: yes
+    no_extra_spaces: yes
+  loop: "{{ os_instance.results }}"
+  when: item.openstack is defined
 
