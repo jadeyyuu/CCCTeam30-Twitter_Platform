@@ -21,9 +21,9 @@ DOCKER_DOMAIN = {
 
 COUCH_DB_PORTS = {
     '5984/tcp': 5984,
-    '5895/tcp': 5985,
-    '5896/tcp': 5986,
-    '5897/tcp': 5987,
+    '5895/tcp': 5986,
+    '5896/tcp': 4369,
+    '5897/tcp': 9100,
 }
 
 COUCH_DB_VOLUMES = {
@@ -34,7 +34,7 @@ COUCH_DB_VOLUMES = {
 }
 
 COUCH_DB_USER = 'admin'
-COUCH_DB_PASSWORD = '123456'
+COUCH_DB_PASSWORD = 'password'
 COUCH_DB_ENV = ['COUCHDB_USER={}'.format(COUCH_DB_USER), 'COUCHDB_PASSWORD={}'.format(COUCH_DB_PASSWORD)]
 
 DJANGO_PORTS = {
@@ -78,12 +78,12 @@ GRAFANA_ENV = {
     'GF_SMTP_ENABLED': True,
     'GF_SMTP_HOST': 'smtp.gmail.com:465',
     'GF_SMTP_USER': 'patrickliuyx@gmail.com',
-    'GF_SMTP_PASSWORD': '123456',
+    'GF_SMTP_PASSWORD': 'password',
     'GF_SMTP_SKIP_VERIFY': True,
     'GF_SMTP_FROM_ADDRESS': 'patrickliuyx@gmail.com',
     'GF_SMTP_FROM_NAME': 'Grafana',
-    'GF_SECURITY_ADMIN_USER': 'ccc30',
-    'GF_SECURITY_ADMIN_PASSWORD': 'ccc30',
+    'GF_SECURITY_ADMIN_USER': 'admin',
+    'GF_SECURITY_ADMIN_PASSWORD': 'password',
     'GF_SERVER_DOMAIN': '172.26.129.75',
 }
 
