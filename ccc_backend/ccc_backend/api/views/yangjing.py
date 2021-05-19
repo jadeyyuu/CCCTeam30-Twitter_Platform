@@ -7,85 +7,138 @@ from plotly.offline import plot
 from plotly.graph_objs import Scatter
 import plotly
 
-
-_, _, filenames = next(walk('/Users/yuxuanliu/Desktop/Desktop - Yuxuan’s MacBook Pro/graph_json2'))
-
-with open('/Users/yuxuanliu/Desktop/Desktop - Yuxuan’s MacBook Pro/graph_json2/payroll_line_Barwon South West.json') as f:
-    for each in f:
-        data = each
-        data = json.loads(each)
-
-def payroll_line_Barwon_South_West(request):
-    payroll_line_Barwon_South_West_ = plotly.offline.plot(data,output_type='div')
-    return render(request, 'payroll_line_Barwon_South_West.html', context={'payroll_line_Barwon_South_West':payroll_line_Barwon_South_West_})
-
-
-with open('/Users/yuxuanliu/Desktop/Desktop - Yuxuan’s MacBook Pro/graph_json2/monthly_covidTweets_Bar.json') as f:
-    for each in f:
-        data_monthly_covidTweets_Bar = each
-        data_monthly_covidTweets_Bar = json.loads(each)
+file_url = '/Users/yuxuanliu/Desktop/Desktop - Yuxuan’s MacBook Pro/graph_json/'
+filename_list = [
+    'monthly_covidTweets_Bar',
+    'Map_bySuburb_March',
+    'Map_bySuburb_April',
+    'Map_bySuburb_May',
+    'Map_bySuburb_June',
+    'Map_bySuburb_July',
+    'Map_bySuburb_August',
+    'Map_bySuburb_September',
+    'Map_bySuburb_October',
+    'Map_bySuburb_November',
+    'Map_bySuburb_December',
+    'payroll_line_Barwon_South_West',
+    'payroll_line_Loddon_Mallee',
+    'payroll_line_Gippsland',
+    'payroll_line_Grampians',
+    'payroll_line_Greater_Melbourne',
+    'payroll_line_Hume',
+    'age_pie_Barwon_South_West',
+    'age_pie_Gippsland',
+    'age_pie_Grampians',
+    'age_pie_Greater_Melbourne',
+    'age_pie_Hume',
+    'age_pie_Loddon_Mallee',
+    'monthly_dist_pie',
+]
+data_dict = {}
+for name_ in filename_list:
+    tmp_dirpath = file_url+name_+'.json'
+    with open(tmp_dirpath, 'r') as f:
+        for each_ in f:
+            data_ = each_
+            data_ = json.loads(each_)
+            data_dict[name_] = data_
 
 def monthly_covidTweets_Bar(request):
-    monthly_covidTweets_Bar_ = plotly.offline.plot(data_monthly_covidTweets_Bar,output_type='div')
-    return render(request, 'monthly_covidTweets_Bar.html', context={'monthly_covidTweets_Bar':monthly_covidTweets_Bar_})
+    tmp_plot = plotly.offline.plot(data_dict['monthly_covidTweets_Bar'],output_type='div')
+    return render(request, 'monthly_covidTweets_Bar.html', context={'monthly_covidTweets_Bar':tmp_plot})
 
+def Map_bySuburb_March(request):
+    tmp_plot = plotly.offline.plot(data_dict['Map_bySuburb_March'],output_type='div')
+    return render(request, 'Map_bySuburb_March.html', context={'Map_bySuburb_March':tmp_plot})
 
+def Map_bySuburb_April(request):
+    tmp_plot = plotly.offline.plot(data_dict['Map_bySuburb_April'],output_type='div')
+    return render(request, 'Map_bySuburb_April.html', context={'Map_bySuburb_April':tmp_plot})
 
-with open('/Users/yuxuanliu/Desktop/Desktop - Yuxuan’s MacBook Pro/graph_json2/monthly_dist_pie.json') as f:
-    for each in f:
-        data_monthly_dist_pie = each
-        data_monthly_dist_pie = json.loads(each)
+def Map_bySuburb_May(request):
+    tmp_plot = plotly.offline.plot(data_dict['Map_bySuburb_May'],output_type='div')
+    return render(request, 'Map_bySuburb_May.html', context={'Map_bySuburb_May':tmp_plot})
 
-def monthly_dist_pie(request):
-    monthly_dist_pie_ = plotly.offline.plot(data_monthly_dist_pie,output_type='div')
-    return render(request, 'monthly_dist_pie.html', context={'monthly_dist_pie':monthly_dist_pie_})
+def Map_bySuburb_June(request):
+    tmp_plot = plotly.offline.plot(data_dict['Map_bySuburb_June'],output_type='div')
+    return render(request, 'Map_bySuburb_June.html', context={'Map_bySuburb_June':tmp_plot})
 
+def Map_bySuburb_July(request):
+    tmp_plot = plotly.offline.plot(data_dict['Map_bySuburb_July'],output_type='div')
+    return render(request, 'Map_bySuburb_July.html', context={'Map_bySuburb_July':tmp_plot})
 
-with open('/Users/yuxuanliu/Desktop/Desktop - Yuxuan’s MacBook Pro/graph_json2/payroll_line_Gippsland.json') as f:
-    for each in f:
-        data_payroll_line_Gippsland = each
-        data_payroll_line_Gippsland = json.loads(each)
+def Map_bySuburb_August(request):
+    tmp_plot = plotly.offline.plot(data_dict['Map_bySuburb_August'],output_type='div')
+    return render(request, 'Map_bySuburb_August.html', context={'Map_bySuburb_August':tmp_plot})
 
-def payroll_line_Gippsland(request):
-    payroll_line_Gippsland_ = plotly.offline.plot(data_payroll_line_Gippsland,output_type='div')
-    return render(request, 'payroll_line_Gippsland.html', context={'payroll_line_Gippsland':payroll_line_Gippsland_})
+def Map_bySuburb_September(request):
+    tmp_plot = plotly.offline.plot(data_dict['Map_bySuburb_September'],output_type='div')
+    return render(request, 'Map_bySuburb_September.html', context={'Map_bySuburb_September':tmp_plot})
 
+def Map_bySuburb_October(request):
+    tmp_plot = plotly.offline.plot(data_dict['Map_bySuburb_October'],output_type='div')
+    return render(request, 'Map_bySuburb_October.html', context={'Map_bySuburb_October':tmp_plot})
 
-with open('/Users/yuxuanliu/Desktop/Desktop - Yuxuan’s MacBook Pro/graph_json2/payroll_line_Grampians.json') as f:
-    for each in f:
-        data_payroll_line_Grampians = each
-        data_payroll_line_Grampians = json.loads(each)
+def Map_bySuburb_November(request):
+    tmp_plot = plotly.offline.plot(data_dict['Map_bySuburb_November'],output_type='div')
+    return render(request, 'Map_bySuburb_November.html', context={'Map_bySuburb_November':tmp_plot})
 
-def payroll_line_Grampians(request):
-    payroll_line_Grampians_ = plotly.offline.plot(data_payroll_line_Grampians,output_type='div')
-    return render(request, 'payroll_line_Grampians.html', context={'payroll_line_Grampians':payroll_line_Grampians_})
+def Map_bySuburb_December(request):
+    tmp_plot = plotly.offline.plot(data_dict['Map_bySuburb_December'],output_type='div')
+    return render(request, 'Map_bySuburb_December.html', context={'Map_bySuburb_December':tmp_plot})
 
-
-with open('/Users/yuxuanliu/Desktop/Desktop - Yuxuan’s MacBook Pro/graph_json2/payroll_line_Greater Melbourne.json') as f:
-    for each in f:
-        data_payroll_line_Greater_Melbourne = each
-        data_payroll_line_Greater_Melbourne = json.loads(each)
-
-def payroll_line_Greater_Melbourne(request):
-    payroll_line_Greater_Melbourne_ = plotly.offline.plot(data_payroll_line_Greater_Melbourne,output_type='div')
-    return render(request, 'payroll_line_Greater_Melbourne.html', context={'payroll_line_Greater_Melbourne':payroll_line_Greater_Melbourne_})
-
-
-with open('/Users/yuxuanliu/Desktop/Desktop - Yuxuan’s MacBook Pro/graph_json2/payroll_line_Hume.json') as f:
-    for each in f:
-        data_payroll_line_Hume = each
-        data_payroll_line_Hume = json.loads(each)
-
-def payroll_line_Hume(request):
-    payroll_line_Hume_ = plotly.offline.plot(data_payroll_line_Hume,output_type='div')
-    return render(request, 'payroll_line_Hume.html', context={'payroll_line_Hume':payroll_line_Hume_})
-
-
-with open('/Users/yuxuanliu/Desktop/Desktop - Yuxuan’s MacBook Pro/graph_json2/payroll_line_Loddon Mallee.json') as f:
-    for each in f:
-        data_payroll_line_Loddon_Mallee = each
-        data_payroll_line_Loddon_Mallee = json.loads(each)
+def payroll_line_Barwon_South_West(request):
+    tmp_plot = plotly.offline.plot(data_dict['payroll_line_Barwon_South_West'],output_type='div')
+    return render(request, 'payroll_line_Barwon_South_West.html', context={'payroll_line_Barwon_South_West':tmp_plot})
 
 def payroll_line_Loddon_Mallee(request):
-    payroll_line_Loddon_Mallee_ = plotly.offline.plot(data_payroll_line_Loddon_Mallee,output_type='div')
-    return render(request, 'payroll_line_Loddon_Mallee.html', context={'payroll_line_Loddon_Mallee':payroll_line_Loddon_Mallee_})
+    tmp_plot = plotly.offline.plot(data_dict['payroll_line_Loddon_Mallee'],output_type='div')
+    return render(request, 'payroll_line_Loddon_Mallee.html', context={'payroll_line_Loddon_Mallee':tmp_plot})
+
+def payroll_line_Gippsland(request):
+    tmp_plot = plotly.offline.plot(data_dict['payroll_line_Gippsland'],output_type='div')
+    return render(request, 'payroll_line_Gippsland.html', context={'payroll_line_Gippsland':tmp_plot})
+
+def payroll_line_Grampians(request):
+    tmp_plot = plotly.offline.plot(data_dict['payroll_line_Grampians'],output_type='div')
+    return render(request, 'payroll_line_Grampians.html', context={'payroll_line_Grampians':tmp_plot})
+
+def payroll_line_Greater_Melbourne(request):
+    tmp_plot = plotly.offline.plot(data_dict['payroll_line_Greater_Melbourne'],output_type='div')
+    return render(request, 'payroll_line_Greater_Melbourne.html', context={'payroll_line_Greater_Melbourne':tmp_plot})
+
+def payroll_line_Hume(request):
+    tmp_plot = plotly.offline.plot(data_dict['payroll_line_Hume'],output_type='div')
+    return render(request, 'payroll_line_Hume.html', context={'payroll_line_Hume':tmp_plot})
+
+def age_pie_Barwon_South_West(request):
+    tmp_plot = plotly.offline.plot(data_dict['age_pie_Barwon_South_West'],output_type='div')
+    return render(request, 'age_pie_Barwon_South_West.html', context={'age_pie_Barwon_South_West':tmp_plot})
+
+def age_pie_Gippsland(request):
+    tmp_plot = plotly.offline.plot(data_dict['age_pie_Gippsland'],output_type='div')
+    return render(request, 'age_pie_Gippsland.html', context={'age_pie_Gippsland':tmp_plot})
+
+def age_pie_Grampians(request):
+    tmp_plot = plotly.offline.plot(data_dict['age_pie_Grampians'],output_type='div')
+    return render(request, 'age_pie_Grampians.html', context={'age_pie_Grampians':tmp_plot})
+
+def age_pie_Greater_Melbourne(request):
+    tmp_plot = plotly.offline.plot(data_dict['age_pie_Greater_Melbourne'],output_type='div')
+    return render(request, 'age_pie_Greater_Melbourne.html', context={'age_pie_Greater_Melbourne':tmp_plot})
+
+def age_pie_Hume(request):
+    tmp_plot = plotly.offline.plot(data_dict['age_pie_Hume'],output_type='div')
+    return render(request, 'age_pie_Hume.html', context={'age_pie_Hume':tmp_plot})
+
+def age_pie_Loddon_Mallee(request):
+    tmp_plot = plotly.offline.plot(data_dict['age_pie_Loddon_Mallee'],output_type='div')
+    return render(request, 'age_pie_Loddon_Mallee.html', context={'age_pie_Loddon_Mallee':tmp_plot})
+
+def monthly_dist_pie(request):
+    tmp_plot = plotly.offline.plot(data_dict['monthly_dist_pie'],output_type='div')
+    return render(request, 'monthly_dist_pie.html', context={'monthly_dist_pie':tmp_plot})
+
+# dict_test = {
+#     'test_pic': render(request, 'monthly_dist_pie.html', context={'monthly_dist_pie':plotly.offline.plot(data_dict['monthly_dist_pie'],output_type='div')})
+#     }
