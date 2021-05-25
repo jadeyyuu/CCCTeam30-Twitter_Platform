@@ -33,8 +33,17 @@
 4. Data query interface
 5. Interface joint debugging
 
-### Data Analysis
-<...>
+### Historical Data Analysis
+1. Pyspark DataFrame Api
+  - Pyspark SQL for statistical analysis
+  - Pyspark MLib for Latent Dirichlet Allocation topic modelling
+  - Textblob for NLP sentiment analysis
+2. tweepy for steaming tweet collection
+3. Plotly for interative data visulization
+4. Interate with CouchDB:
+   - Retrieve historical tweets data
+   - Save and retrieve streaming tweets data
+   - Save visualization indexes in json format
 
 ### Store and  retrieve data from the couchdb
 <...>
