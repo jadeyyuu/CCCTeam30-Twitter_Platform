@@ -34,7 +34,7 @@
 5. Interface joint debugging
 
 ### Historical Data Analysis
-1. Pyspark DataFrame Api
+1. Pyspark DataFrame API
    - Pyspark SQL for statistical analysis
    - Pyspark MLib for Latent Dirichlet Allocation topic modelling
    - Textblob for NLP sentiment analysis
