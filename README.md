@@ -7,15 +7,10 @@
 * [Yilin Yu - 965720](https://github.com/Hieler)
 * [Chen Zhou - 987776](https://github.com/CZZHO)
 
-## Video links
-### Ansible
-<...>
-
-### CouchDB 
-<...>
-
-### Webserver presentation
-<...>
+## Demonstration Video links
+ - Ansible: https://youtu.be/2rKPK4ZUcn4
+ - CouchDB: https://youtu.be/9TnfqdsxSR8 
+ - Web Platform: https://youtu.be/gCVeuToZgzY
 
 
 ## Project Structure
