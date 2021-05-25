@@ -45,8 +45,8 @@
    - Save and retrieve streaming tweets data
    - Save visualization indexes in json format
 
-### Store and  retrieve data from the couchdb
-<...>
+### Couchdb
+Store and retrieve data from the couchdb
 
 
 ### Server Arrangement
