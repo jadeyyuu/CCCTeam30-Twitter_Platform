@@ -35,9 +35,9 @@
 
 ### Historical Data Analysis
 1. Pyspark DataFrame Api
-  - Pyspark SQL for statistical analysis
-  - Pyspark MLib for Latent Dirichlet Allocation topic modelling
-  - Textblob for NLP sentiment analysis
+   - Pyspark SQL for statistical analysis
+   - Pyspark MLib for Latent Dirichlet Allocation topic modelling
+   - Textblob for NLP sentiment analysis
 2. tweepy for steaming tweet collection
 3. Plotly for interative data visulization
 4. Interate with CouchDB:
