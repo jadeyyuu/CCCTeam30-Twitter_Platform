@@ -1,7 +1,7 @@
 ---
 - name: pull latest code from git
   git:
-    repo: ssh://git@github.com/HanxunHuangLemonBear/COMP90024-2019S1-Team7.git
+    repo: ssh://git@github.com:jadeyyuu/CCC30-Twitter_Platform.git
     key_file: /home/ubuntu/.ssh/GitHub
     update: yes
     dest: '{{ remote_working_directory }}'
